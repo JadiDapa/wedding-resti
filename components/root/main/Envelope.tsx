@@ -74,7 +74,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 
-const GIF_DURATION_MS = 8500;
+const GIF_DURATION_MS = 7500;
 
 export default function Envelope({ children }: { children: React.ReactNode }) {
   const [stage, setStage] = useState<"idle" | "playing" | "done">("idle");

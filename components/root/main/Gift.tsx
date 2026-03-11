@@ -5,9 +5,15 @@ import { Copy } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { SlideDown, SlideUp, Fade } from "@/components/root/Motion";
+import { toast } from "sonner";
 
 export default function Gift() {
   const [open, setOpen] = useState(false);
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Nomor rekening berhasil disalin!");
+  };
 
   return (
     <section className="relative flex min-h-screen w-full snap-start flex-col items-center overflow-hidden bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y py-32">
@@ -37,11 +43,11 @@ export default function Gift() {
       </SlideUp>
 
       <Fade delay={0.3} className="absolute top-80 -right-24 z-0">
-        <Image src={"/images/mats.png"} alt="" width={240} height={240} />
+        <Image src="/images/mats.png" alt="" width={240} height={240} />
       </Fade>
 
       <Fade delay={0.5} className="absolute top-180 -left-24 z-0">
-        <Image src={"/images/mats.png"} alt="" width={240} height={240} />
+        <Image src="/images/mats.png" alt="" width={240} height={240} />
       </Fade>
 
       <SlideUp delay={0.8} className="relative mt-10 w-72">
@@ -50,7 +56,9 @@ export default function Gift() {
 
         <div className="overflow-hidden px-2">
           <div
-            className={`relative z-10 flex w-full flex-col items-center rounded-b-md bg-[#fff3c2] px-4 py-12 transition-transform duration-500 ${open ? "-translate-y-8" : "-translate-y-full"}`}
+            className={`relative z-10 flex w-full flex-col items-center rounded-b-md bg-[#fff3c2] px-4 py-12 transition-transform duration-500 ${
+              open ? "-translate-y-8" : "-translate-y-full"
+            }`}
           >
             {/* Mandiri */}
             <div className="w-full rounded-lg bg-[#5c6030] p-3">
@@ -69,9 +77,10 @@ export default function Gift() {
 
             <Button
               size="sm"
-              className="mt-4 flex items-center rounded-md bg-[#52242e] px-8 text-yellow-50"
+              onClick={() => copyToClipboard("1120017866752")}
+              className="mt-4 flex items-center gap-2 rounded-md bg-[#52242e] px-8 text-yellow-50"
             >
-              SALIN <Copy />
+              SALIN <Copy size={16} />
             </Button>
 
             {/* BRI */}
@@ -91,9 +100,10 @@ export default function Gift() {
 
             <Button
               size="sm"
-              className="mt-4 flex items-center rounded-md bg-[#52242e] px-8 text-yellow-50"
+              onClick={() => copyToClipboard("227801004542508")}
+              className="mt-4 flex items-center gap-2 rounded-md bg-[#52242e] px-8 text-yellow-50"
             >
-              SALIN <Copy />
+              SALIN <Copy size={16} />
             </Button>
           </div>
         </div>

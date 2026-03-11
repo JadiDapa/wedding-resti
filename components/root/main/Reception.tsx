@@ -6,7 +6,7 @@ import { SlideUp, SlideLeft, SlideRight, Fade } from "@/components/root/Motion";
 export default function Reception() {
   return (
     <div className="relative min-h-screen snap-start bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y px-4">
-      <div className="relative h-full w-full rounded-b-full bg-[#52242e] p-4 pt-24 pb-52">
+      <div className="relative h-full w-full rounded-b-full bg-[#52242e] p-4 pb-52">
         <div className="relative flex flex-col items-end">
           <SlideLeft delay={0.6} className="relative z-10 h-52 w-64">
             <Image
@@ -70,7 +70,7 @@ export default function Reception() {
                 APRIL 2026
               </p>
               <p className="mt-2 text-sm tracking-widest">
-                08:00 WIB - Selesai
+                10:00 WIB - Selesai
               </p>
             </div>
           </SlideRight>

@@ -16,17 +16,17 @@ export default function Gift() {
   };
 
   return (
-    <section className="relative flex min-h-screen w-full snap-start flex-col items-center overflow-hidden bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y py-32">
+    <section className="relative flex min-h-screen w-full snap-start flex-col items-center overflow-hidden bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y pt-18 pb-32">
       <SlideDown
         delay={0.2}
-        className="font-brittany mb-10 text-center text-6xl font-thin"
+        className="font-brittany mb-10 text-center text-[52px] font-thin"
       >
         Wedding Gift
       </SlideDown>
 
       <SlideDown
         delay={0.4}
-        className="mx-auto max-w-80 text-center text-xs font-semibold tracking-[0.15rem]"
+        className="mx-auto max-w-64 text-center text-[10px] font-semibold tracking-[0.15rem]"
       >
         Doa restu anda merupakan karunia yang sangat berarti bagi kami. Jika
         memberi adalah ungkapan tanda kasih, anda dapat memberi kado secara

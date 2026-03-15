@@ -29,13 +29,13 @@ export default function Wish() {
         </SlideRight>
       </div>
 
-      <div className="w-full px-18 pt-24">
+      <div className="w-full px-18 pt-20">
         <SlideDown
           delay={0.3}
-          className="font-brittany mb-8 text-center text-6xl font-thin"
+          className="font-brittany mb-8 text-center text-[56px] font-thin"
         >
           Wedding <br />
-          <span>Wish</span>
+          <span className="px-4 py-4">Wish</span>
         </SlideDown>
 
         <SlideUp delay={0.6}>

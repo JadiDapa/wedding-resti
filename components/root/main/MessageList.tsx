@@ -51,7 +51,7 @@ export default function MessageList({ wishes }: { wishes: Wish[] }) {
   return (
     <div
       ref={containerRef}
-      className="mt-12 flex max-h-96 w-90 flex-col gap-3 overflow-hidden rounded-sm border-2 border-[#5c6030] bg-[#5c6030] p-5 pb-6"
+      className="mt-12 flex max-h-96 w-80 flex-col gap-3 overflow-hidden rounded-sm border-2 border-[#5c6030] bg-[#5c6030] p-5 pb-6"
     >
       {wishes.map((w) => (
         <div key={w.id} className="rounded-sm bg-[#fff3c2] p-3 text-[#52242e]">

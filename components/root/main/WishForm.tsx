@@ -52,7 +52,7 @@ export default function WishForm() {
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
-      className="mt-4 w-full lg:mt-6 relative z-50"
+      className="relative z-50 mt-2 w-full lg:mt-6"
     >
       <FieldGroup>
         <div className="space-y-4">
@@ -60,8 +60,8 @@ export default function WishForm() {
             control={form.control}
             name="name"
             render={({ field, fieldState }) => (
-              <Field className="relative bg-[#fff3c2] overflow-hidden rounded-md ">
-                <InputGroup className="h-10  ">
+              <Field className="relative overflow-hidden rounded-md bg-[#fff3c2]">
+                <InputGroup className="h-10">
                   <InputGroupInput
                     {...field}
                     className="ml-2 text-red-950"
@@ -84,7 +84,7 @@ export default function WishForm() {
             control={form.control}
             name="message"
             render={({ field, fieldState }) => (
-              <Field className="relative bg-[#fff3c2] overflow-hidden rounded-md ">
+              <Field className="relative overflow-hidden rounded-md bg-[#fff3c2]">
                 <InputGroup className="">
                   <InputGroupTextarea
                     {...field}
@@ -107,7 +107,7 @@ export default function WishForm() {
 
         <Button
           disabled={isPending || !form.formState.isValid}
-          className="flex cursor-pointer bg-[#52242e] text-yellow-50 h-9 w-40 mx-auto items-center gap-3 "
+          className="mx-auto flex h-9 w-40 cursor-pointer items-center gap-3 bg-[#52242e] text-yellow-50"
         >
           {isPending ? (
             <>

@@ -5,8 +5,8 @@ import { SlideUp, SlideLeft, SlideRight, Fade } from "@/components/root/Motion";
 
 export default function Reception() {
   return (
-    <div className="relative min-h-screen snap-start bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y px-4">
-      <div className="relative h-full w-full rounded-b-full bg-[#52242e] p-4 pb-52">
+    <div className="relative min-h-screen snap-start bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y px-3 pb-24">
+      <div className="relative h-full w-full rounded-b-full bg-[#52242e] p-3 pb-52">
         <div className="relative flex flex-col items-end">
           <SlideLeft delay={0.6} className="relative z-10 h-52 w-64">
             <Image
@@ -26,7 +26,7 @@ export default function Reception() {
 
           <SlideUp
             delay={0.8}
-            className="relative flex h-88 w-58 justify-end text-[#52242e]"
+            className="relative flex h-76 w-56 justify-end text-[#52242e]"
           >
             <Image
               src={"/images/reception-location-card.png"}
@@ -34,29 +34,32 @@ export default function Reception() {
               fill
               className="absolute z-0 object-contain object-center"
             />
-            <div className="relative z-10 flex w-52 flex-col items-center ps-4 pt-16">
+            <div className="relative z-10 ms-8 flex flex-col items-center px-1 pt-12">
               <p className="text-center text-sm tracking-[0.3em]">
                 Bertempat di
               </p>
-              <Image
-                src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepfNROvKG-25KuQ9wbnPZDSeCw1yBW_d9ac3hayl41CfqfLJvkdW4cpAhOh7iep3OsUfcGYAnqeyNZIWF4AuKRNYoUt2LtZHs1MHPG4aeu4UP81q-2OtzRxgIoBbSG40jNiSD26eS1bksSJ=w426-h240-k-no"
-                alt=""
-                width={172}
-                height={220}
-                className="mt-2 rounded-md border"
-              />
+              <div className="relative mt-1 aspect-video w-36">
+                <Image
+                  src="/images/maps.png"
+                  alt=""
+                  fill
+                  className="fill rounded-md object-cover"
+                />
+              </div>
               <p className="mt-2 px-3 text-center text-[9px] tracking-widest">
                 The Royal Convention Center Jl. KH. Azhari No.819, Tangga Takat,
                 Kec. Seberang Ulu II, Kota Palembang, Sumatera Selatan 30111
               </p>
-              <Badge className="mt-2 animate-bounce bg-[#696d3f]">
-                <p className="text-yellow-100">LOKASI</p>
-                <MapPin className="text-yellow-100" />
-              </Badge>
+              <a href="https://share.google/Hop1K2wYBn0F65mpl" target="_blank">
+                <Badge className="mt-2 animate-bounce bg-[#696d3f]">
+                  <p className="text-yellow-100">LOKASI</p>
+                  <MapPin className="text-yellow-100" />
+                </Badge>
+              </a>
             </div>
           </SlideUp>
 
-          <SlideRight delay={1.0} className="absolute top-40 left-2 z-20">
+          <SlideRight delay={1.0} className="absolute top-40 left-0 z-20">
             <Image
               src={"/images/akad-datecard.png"}
               alt=""
@@ -64,12 +67,12 @@ export default function Reception() {
               height={200}
             />
             <div className="absolute top-10 left-1/2 -translate-x-1/2 text-center text-[#52242e]">
-              <p className="text-xl tracking-[0.2em]">SABTU</p>
-              <p className="text-xl tracking-[0.2em]">
+              <p className="text-lg tracking-[0.2em]">SABTU</p>
+              <p className="text-lg tracking-[0.2em]">
                 18 <br />
                 APRIL 2026
               </p>
-              <p className="mt-2 text-sm tracking-widest">
+              <p className="mt-2 text-xs tracking-widest">
                 10:00 WIB - Selesai
               </p>
             </div>

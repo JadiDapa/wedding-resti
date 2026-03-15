@@ -40,7 +40,7 @@ export default function CountDownDate() {
         className="object-contain object-center"
       />
 
-      <div className="absolute text-center text-[#663c2f] top-8 left-1/2 -translate-x-1/2 flex gap-9">
+      <div className="absolute top-7 left-1/2 flex -translate-x-1/2 gap-8 text-center text-[#663c2f]">
         <TimeItem value={timeLeft.days} label="Hari" />
         <TimeItem value={timeLeft.hours} label="Jam" />
         <TimeItem value={timeLeft.minutes} label="Menit" />
@@ -53,7 +53,7 @@ export default function CountDownDate() {
 function TimeItem({ value, label }: { value: number; label: string }) {
   return (
     <div className="space-y-2">
-      <p className="text-5xl">{value}</p>
+      <p className="text-[40px]">{value}</p>
       <p>{label}</p>
     </div>
   );

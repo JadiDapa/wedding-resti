@@ -32,41 +32,44 @@ export default function Hero() {
         </SlideLeft>
       </div>
 
-      <div className="relative z-10 w-full px-16 pt-24 text-center">
-        <SlideDown delay={0.3} className="mb-12 text-2xl tracking-wider">
+      <div className="relative z-10 w-full px-14 pt-18 text-center">
+        <SlideDown delay={0.3} className="mb-6 text-xl tracking-wider">
           The Wedding of
         </SlideDown>
 
         <SlideRight
           delay={0.6}
-          className="font-brittany text-start text-6xl font-thin"
+          className="font-brittany text-start text-[52px] font-thin"
         >
           Resti
         </SlideRight>
 
         <SlideLeft
           delay={0.75}
-          className="font-brittany text-end text-6xl font-thin"
+          className="font-brittany -translate-y-8 text-end text-[52px] font-thin"
         >
           Syahri
         </SlideLeft>
 
-        <SlideUp delay={1.1} className="mt-36 font-semibold tracking-wider">
+        <SlideUp
+          delay={1.1}
+          className="mt-26 text-sm font-semibold tracking-wider"
+        >
           Saturday, 18 April 2026
         </SlideUp>
       </div>
 
-      <Fade delay={0.5} className="absolute top-60 z-0">
+      <Fade delay={0.5} className="absolute top-52 z-0">
         <Image
-          src={"/images/hero-portrait.png"}
+          src={"/images/hero-port.png"}
           alt=""
           className="object-contain object-center"
-          width={300}
-          height={200}
+          width={260}
+          height={180}
         />
       </Fade>
 
-      <SlideUp delay={0.3} className="absolute bottom-0 h-[50vh] w-full">
+      <SlideUp delay={0.3} className="absolute bottom-0 z-10 h-[50vh] w-full">
         <Image
           src={"/images/wish-floor.png"}
           alt=""

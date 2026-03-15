@@ -5,8 +5,8 @@ import { SlideUp, SlideLeft, SlideRight, Fade } from "@/components/root/Motion";
 
 export default function Akad() {
   return (
-    <div className="relative min-h-screen snap-start bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y px-4 pt-24">
-      <div className="relative h-full w-full rounded-t-full bg-[#52242e] p-4 pt-52">
+    <div className="relative min-h-screen snap-start bg-[url('/images/bg-2.jpg')] bg-fixed bg-center bg-repeat-y px-3 pt-24">
+      <div className="relative h-full w-full rounded-t-full bg-[#52242e] p-3 pt-52">
         <Fade
           delay={0.2}
           className="absolute -top-12 left-1/2 size-64 -translate-x-1/2"
@@ -21,7 +21,7 @@ export default function Akad() {
 
         <SlideUp
           delay={0.4}
-          className="mx-auto max-w-80 text-center text-[14px] tracking-widest text-white"
+          className="mx-auto max-w-64 text-center text-[12px] tracking-widest text-white"
         >
           Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
           Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada
@@ -48,7 +48,7 @@ export default function Akad() {
 
           <SlideUp
             delay={0.8}
-            className="relative mx-3 h-80 w-56 text-[#52242e]"
+            className="relative mx-2 h-72 w-52 text-[#52242e]"
           >
             <Image
               src={"/images/akad-location-card.png"}
@@ -56,42 +56,45 @@ export default function Akad() {
               fill
               className="absolute z-0 object-contain object-center"
             />
-            <div className="relative z-10 flex w-48 flex-col items-center px-4 pt-16">
+            <div className="relative z-10 me-8 flex flex-col items-center px-1 pt-13">
               <p className="text-center text-sm tracking-[0.3em]">
                 Bertempat di
               </p>
-              <Image
-                src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepfNROvKG-25KuQ9wbnPZDSeCw1yBW_d9ac3hayl41CfqfLJvkdW4cpAhOh7iep3OsUfcGYAnqeyNZIWF4AuKRNYoUt2LtZHs1MHPG4aeu4UP81q-2OtzRxgIoBbSG40jNiSD26eS1bksSJ=w426-h240-k-no"
-                alt=""
-                width={160}
-                height={200}
-                className="mt-2 rounded-md border"
-              />
-              <p className="mt-2 text-center text-[10px] tracking-widest">
+              <div className="relative aspect-video w-38">
+                <Image
+                  src="/images/maps.png"
+                  alt=""
+                  fill
+                  className="fill rounded-md object-cover"
+                />
+              </div>
+              <p className="mt-2 px-0.5 text-center text-[10px] tracking-widest">
                 The Royal Convention Center Jl. KH. Azhari No.819, Tangga Takat,
                 Kec. Seberang Ulu II, Kota Palembang, Sumatera Selatan 30111
               </p>
-              <Badge className="mt-2 animate-bounce bg-[#696d3f]">
-                <p className="text-yellow-100">LOKASI</p>
-                <MapPin className="text-yellow-100" />
-              </Badge>
+              <a href="https://share.google/Hop1K2wYBn0F65mpl" target="_blank">
+                <Badge className="mt-2 animate-bounce bg-[#696d3f]">
+                  <p className="text-yellow-100">LOKASI</p>
+                  <MapPin className="text-yellow-100" />
+                </Badge>
+              </a>
             </div>
           </SlideUp>
 
-          <SlideLeft delay={1.0} className="absolute top-40 -right-4 z-20">
+          <SlideLeft delay={1.0} className="absolute top-40 -right-3 z-20">
             <Image
               src={"/images/akad-datecard.png"}
               alt=""
-              width={150}
-              height={200}
+              width={140}
+              height={180}
             />
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 text-center text-[#52242e]">
-              <p className="text-xl tracking-[0.2em]">SABTU</p>
-              <p className="text-xl tracking-[0.2em]">
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 text-center text-[#52242e]">
+              <p className="text-lg tracking-[0.2em]">SABTU</p>
+              <p className="text-lg tracking-[0.2em]">
                 18 <br />
                 APRIL 2026
               </p>
-              <p className="mt-2 text-sm tracking-widest">
+              <p className="mt-2 text-xs tracking-widest">
                 08:00 WIB - Selesai
               </p>
             </div>

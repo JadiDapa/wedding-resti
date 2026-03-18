@@ -29,7 +29,7 @@ export default function Wish() {
         </SlideRight>
       </div>
 
-      <div className="w-full px-18 pt-20">
+      <div className="w-full px-12 pt-20">
         <SlideDown
           delay={0.3}
           className="font-brittany mb-8 text-center text-[56px] font-thin"

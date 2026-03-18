@@ -18,13 +18,13 @@ export default async function WishList() {
         />
       </SlideDown>
 
-      <Fade delay={0.5}>
+      <Fade delay={0.5} className="z-10">
         <MessageList wishes={wishes} />
       </Fade>
 
-      <SlideUp delay={0.7} className="relative h-96 w-full">
+      <SlideUp delay={0.7} className="relative bottom-0 z-0 h-64 w-full">
         <Image
-          src={"/images/wish-floor.png"}
+          src={"/images/wishlist-floor.png"}
           alt=""
           className="object-contain object-bottom"
           fill

@@ -32,7 +32,7 @@ export default function Hero() {
         </SlideLeft>
       </div>
 
-      <div className="relative z-10 w-full px-14 pt-18 text-center">
+      <div className="relative z-20 w-full px-14 pt-18 text-center">
         <SlideDown delay={0.3} className="mb-6 text-xl tracking-wider">
           The Wedding of
         </SlideDown>

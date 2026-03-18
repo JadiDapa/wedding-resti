@@ -6,53 +6,77 @@ import { useEffect, useRef } from "react";
 
 export default function MessageList({ wishes }: { wishes: Wish[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const isHovered = useRef(false);
+  const animationId = useRef<number | null>(null);
+  const pauseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearTimers = () => {
+    if (animationId.current) cancelAnimationFrame(animationId.current);
+    if (pauseTimeout.current) clearTimeout(pauseTimeout.current);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || wishes.length === 0) return;
 
-    let animationId: number;
-    let pauseTimeout: ReturnType<typeof setTimeout>;
-    const speed = 0.6; // px per frame
+    const speed = 0.6;
 
     const scroll = () => {
       if (!container) return;
+
+      // Pause auto-scroll while user is hovering
+      if (isHovered.current) {
+        animationId.current = requestAnimationFrame(scroll);
+        return;
+      }
 
       const { scrollTop, scrollHeight, clientHeight } = container;
       const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
 
       if (atBottom) {
-        // Pause at bottom, then snap back to top
-        pauseTimeout = setTimeout(() => {
+        pauseTimeout.current = setTimeout(() => {
           container.scrollTo({ top: 0, behavior: "smooth" });
-          // Wait for smooth scroll back, then resume
-          pauseTimeout = setTimeout(() => {
-            animationId = requestAnimationFrame(scroll);
+          pauseTimeout.current = setTimeout(() => {
+            animationId.current = requestAnimationFrame(scroll);
           }, 1000);
         }, 2000);
         return;
       }
 
       container.scrollTop += speed;
-      animationId = requestAnimationFrame(scroll);
+      animationId.current = requestAnimationFrame(scroll);
     };
 
-    // Initial pause before starting
-    pauseTimeout = setTimeout(() => {
-      animationId = requestAnimationFrame(scroll);
+    pauseTimeout.current = setTimeout(() => {
+      animationId.current = requestAnimationFrame(scroll);
     }, 1500);
 
-    return () => {
-      cancelAnimationFrame(animationId);
-      clearTimeout(pauseTimeout);
-    };
+    return () => clearTimers();
   }, [wishes]);
+
+  const handleMouseEnter = () => {
+    isHovered.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isHovered.current = false;
+  };
 
   return (
     <div
       ref={containerRef}
-      className="mt-12 flex max-h-96 w-80 flex-col gap-3 overflow-hidden rounded-sm border-2 border-[#5c6030] bg-[#5c6030] p-5 pb-6"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="mt-12 flex max-h-64 w-80 flex-col gap-3 overflow-y-auto rounded-sm border-2 border-[#5c6030] bg-[#5c6030] p-5 pb-6 [&::-webkit-scrollbar]:hidden"
+      style={{ scrollbarWidth: "none" }}
     >
+      {wishes.length === 0 && (
+        <div className="flex items-center justify-center">
+          <p className="font-semibold tracking-wide">
+            Belum Ada Ucapan Ditambahkan!
+          </p>
+        </div>
+      )}
       {wishes.map((w) => (
         <div key={w.id} className="rounded-sm bg-[#fff3c2] p-3 text-[#52242e]">
           <div className="flex items-center gap-2">

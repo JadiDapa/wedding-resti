@@ -60,7 +60,7 @@ export default function WishForm() {
             control={form.control}
             name="name"
             render={({ field, fieldState }) => (
-              <Field className="relative overflow-hidden rounded-md bg-[#fff3c2]">
+              <Field className="relative w-64 overflow-hidden rounded-sm bg-[#fff3c2]">
                 <InputGroup className="h-10">
                   <InputGroupInput
                     {...field}
@@ -84,7 +84,7 @@ export default function WishForm() {
             control={form.control}
             name="message"
             render={({ field, fieldState }) => (
-              <Field className="relative overflow-hidden rounded-md bg-[#fff3c2]">
+              <Field className="relative w-64 overflow-hidden rounded-sm bg-[#fff3c2]">
                 <InputGroup className="">
                   <InputGroupTextarea
                     {...field}

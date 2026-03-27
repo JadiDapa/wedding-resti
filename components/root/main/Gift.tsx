@@ -36,7 +36,7 @@ export default function Gift() {
       <SlideUp delay={0.6}>
         <Button
           onClick={() => setOpen(!open)}
-          className="mt-8 bg-[#fff3c2] px-6 tracking-widest"
+          className="mt-8 bg-[#fff3c2] px-6 tracking-widest text-[#52242e]"
         >
           KLIK DISINI
         </Button>
